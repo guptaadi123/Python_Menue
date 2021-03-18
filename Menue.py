@@ -31,7 +31,7 @@ while True:
 
         elif option == '3':
             sgname=input("Secrity group name\n")
-            c="aws ec2 describe-security-groups --groups-names {}".format(sgname)
+            c="aws ec2 describe-security-groups --groups-name {0}".format(sgname)
             os.system(c)
 
         elif option == '4':
@@ -39,13 +39,13 @@ while True:
             protocol=input("Enter protocol\n")
             port=input("Enter port number\n")
             cidr=input("Cidr value\n")  
-            d="aws ec2 authorize-security-group-ingress --group-id {} --protocol    {} --port {} --cidr {}".format(grpid,protocol,port,cidr)
+            d="aws ec2 authorize-security-group-ingress --group-id {0} --protocol    {1} --port {2} --cidr {3}".format(grpid,protocol,port,cidr)
             os.system(d)
         elif option == '5':
             volumetype=input("Volume type you want\n")
             size=input("Size you want\n")
             Avalzone=input("Avaiblity zone\n")
-            e="aws ec2 create volume --volume-type {} --size {} --availablity-zone  {}".format(volumetype,size,Avalzone)
+            e="aws ec2 create-volume --volume-type {} --size {} --availability-zone  {}".format(volumetype,size,Avalzone)
             os.system(e)
             
         elif option == '6':
